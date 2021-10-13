@@ -12,13 +12,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
 public class AutomatedTesting {
-	//declare Selenium WebDriver
 	private WebDriver webDriver;
   @Test
-  public void f() {
-	  webDriver.navigate().to("http://localhost:9099/existential_crisis/retrievedDreads");
+  public void checkTitle() {
+	  webDriver.navigate().to("http://localhost:9099/existential_crisis/");
+	  webDriver.get("http://localhost:9099/existential_crisis/");
 	  Assert.assertEquals(webDriver.getTitle(), "existential crisis");
 	  System.out.println("title: "+webDriver.getTitle());
+	  Assert.assertTrue(webDriver.getTitle().contains("existential crisis"));
 	  
   }
   @BeforeTest
